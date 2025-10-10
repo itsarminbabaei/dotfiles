@@ -39,7 +39,6 @@ function travelese
     # Window 3: Development shell
     tmux new-window -t $session_name:3 -n "dev"
     tmux send-keys -t $session_name:dev "cd /Users/itsarminbabaei/dev/travelese" Enter
-    tmux send-keys -t $session_name:dev "gmorning" Enter
     
     # Window 4: API testing and development
     tmux new-window -t $session_name:4 -n "api"

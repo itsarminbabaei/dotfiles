@@ -14,11 +14,15 @@ set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar"
 set -gx HOMEBREW_REPOSITORY "/opt/homebrew"
 set -gx MANPATH "/opt/homebrew/share/man" $MANPATH
 set -gx INFOPATH "/opt/homebrew/share/info" $INFOPATH
- 
+
 # Use fish_add_path instead of setting PATH manually
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
 fish_add_path $HOME/.local/bin
+
+# rails
+fish_add_path /opt/homebrew/lib/ruby/gems/3.4.0/bin
+fish_add_path $HOME/.gem/ruby/3.4.0/bin
 
 # Bun setup
 set --export BUN_INSTALL "$HOME/.bun"

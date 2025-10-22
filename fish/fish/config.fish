@@ -28,6 +28,11 @@ fish_add_path $HOME/.gem/ruby/3.4.0/bin
 set --export BUN_INSTALL "$HOME/.bun"
 fish_add_path $BUN_INSTALL/bin
 
+# Solana
+fish_add_path $HOME/.local/share/solana/install/active_release/bin
+
+fish_add_path $HOME/.cargo/bin
+
 # Clear line on CTRL + C
 # Sometimes it still doesn't work well enough on node.js scripts :(
 bind --preset \cC 'cancel-commandline'
@@ -77,3 +82,12 @@ starship init fish | source
 
 # Set default editor
 set -gx EDITOR nvim
+
+# Cargo environment (Fish equivalent of sourcing .cargo/env)
+fish_add_path ~/.cargo/bin
+
+# Herd Lite paths
+fish_add_path /Users/itsarminbabaei/.config/herd-lite/bin
+set -gx PHP_INI_SCAN_DIR "/Users/itsarminbabaei/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+string match -q "$TERM_PROGRAM" "kiro" and . (kiro --locate-shell-integration-path fish)

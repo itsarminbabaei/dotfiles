@@ -1,0 +1,21 @@
+# <type>: <description>
+#
+# <optional body>
+#
+# <optional footer>
+
+# Types:
+# feat:     A new feature
+# fix:      A bug fix
+# refactor: Code change that neither fixes a bug nor adds a feature
+# wip:      Work in progress
+# test:     Adding missing tests
+# docs:     Documentation only changes
+# chore:    Changes to build process or auxiliary tools
+
+# Examples:
+# feat: implement user authentication system
+# fix: resolve API error in flights router
+# refactor: improve code quality in engine providers
+# wip: engine - amadeus - api client
+

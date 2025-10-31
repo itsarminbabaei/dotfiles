@@ -42,11 +42,11 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
+   # Configure keymap in X11
+   services.xserver.xkb = {
+     layout = "us";
+     variant = "";
+   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.itsarminbabaei = {
@@ -56,15 +56,31 @@
     packages = with pkgs; [];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+   # Allow unfree packages
+   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  ];
+   # Enable graphics
+   hardware.graphics.enable = true;
+
+   # List packages installed in system profile. To search, run:
+   # $ nix search wget
+   environment.systemPackages = with pkgs; [
+     # Hyprland ecosystem
+     hyprpaper
+     hyprlock
+     hypridle
+     waybar
+     dunst
+     rofi
+     # Other essentials
+     chromium
+     git
+     curl
+     wget
+     htop
+     tree
+     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+   ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -76,8 +92,12 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+   # Enable the OpenSSH daemon.
+   services.openssh.enable = true;
+
+   # Enable SDDM for Wayland login
+   services.displayManager.sddm.enable = true;
+   services.displayManager.sddm.wayland.enable = true;
 
    # Enable Hyprland
    programs.hyprland.enable = true;

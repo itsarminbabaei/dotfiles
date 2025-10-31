@@ -3,7 +3,6 @@
 {
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = username;
-  home.homeDirectory = "/Users/${username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -39,7 +38,6 @@
   ".config/ghostty".source = ./config/ghostty;
   ".config/fastfetch".source = ./config/fastfetch;
   ".config/nix".source = ./config/nix;
-  ".config/hypr".source = ./config/hypr;
   ".hyper.js".source = ./.hyper.js;
   ".gitconfig".source = ./.gitconfig;
   ".bashrc".source = ./.bashrc;
@@ -100,8 +98,6 @@
   # Import your tool configs here
   imports = [
     ./modules/shell/starship.nix
-    ./modules/desktop/hyprland.nix
     # ./modules/editor/tmux.nix  # Managed manually
-    # Add more as you port them
   ];
 }

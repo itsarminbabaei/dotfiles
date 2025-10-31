@@ -4,6 +4,8 @@
   imports = [ ../shared/home.nix ];
 
   # macOS-specific overrides/additions
+  home.homeDirectory = "/Users/${username}";
+
   home.file = {
     "Brewfile".source = ./Brewfile;
   };

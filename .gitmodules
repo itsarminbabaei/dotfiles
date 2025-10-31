@@ -1,0 +1,6 @@
+[submodule "nvim"]
+	path = shared/config/nvim
+	url = https://github.com/itsarminbabaei/nvim.git
+[submodule "shared/config/nvim"]
+	path = shared/config/nvim
+	url = https://github.com/itsarminbabaei/nvim.git

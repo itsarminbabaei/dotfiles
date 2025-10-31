@@ -10,6 +10,11 @@
       resurrect
       continuum
       vim-tmux-navigator
+      yank
+      open
+      copycat
+      sidebar
+      tmux-fzf
     ];
 
     # Set default shell explicitly

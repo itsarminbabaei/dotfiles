@@ -16,16 +16,17 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # Add packages here
-    fish
-    fastfetch
-    ghostty
-    mise
-    neovim  # For nvim
-    tmux
-    starship
-    git
-    # Add more as needed
+  # Add packages here
+  fish
+  fastfetch
+  mise
+  neovim  # For nvim
+  tmux
+  starship
+  git
+  # Add more as needed
+  ] ++ lib.optionals (pkgs.stdenv.isLinux) [
+  ghostty
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -82,22 +83,12 @@
   EDITOR = "nvim";
   };
 
-  # Enable tmux
-  programs.tmux = {
-    enable = true;
-    extraConfig = ''
-      set-option -g default-shell $SHELL
-    '';
-  };
-
-
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   # Import your tool configs here
   imports = [
     ./modules/shell/starship.nix
-    # ./modules/editor/tmux.nix  # Managed manually
+    ./modules/editor/tmux.nix
   ];
 }

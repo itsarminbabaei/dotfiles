@@ -19,7 +19,7 @@
       homeConfigurations.macos = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${macSystem};
         modules = [
-          ./shared/home.nix
+          ./macos/home.nix
         ];
         extraSpecialArgs = {
           inherit username;
@@ -35,7 +35,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.${username} = import ./shared/home.nix;
+            home-manager.users.${username} = import ./nixos/home.nix;
             home-manager.extraSpecialArgs = { inherit username; };
           }
         ];

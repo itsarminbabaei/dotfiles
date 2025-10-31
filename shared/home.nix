@@ -18,9 +18,9 @@
   # environment.
   home.packages = with pkgs; [
     # Add packages here
-    fish
+    # fish  # Managed manually via home.file
     starship
-    tmux
+    # tmux  # Managed manually via home.file
     neovim  # For nvim
     # Add more as needed
   ];
@@ -29,9 +29,24 @@
   # plain files is through 'home.file'.
   home.file = {
   # Raw configs sourced from repo
+  ".config/fish".source = ./config/fish;
   ".config/nvim".source = ./config/nvim;
+  ".config/mise".source = ./config/mise;
+  ".config/ghostty".source = ./config/ghostty;
+  ".config/fastfetch".source = ./config/fastfetch;
+  ".config/nix".source = ./config/nix;
   ".hyper.js".source = ./.hyper.js;
   ".gitconfig".source = ./.gitconfig;
+  ".bashrc".source = ./.bashrc;
+  ".profile".source = ./.profile;
+  ".gitignore".source = ./.gitignore;
+  ".gitmessage".source = ./.gitmessage;
+  ".gitmodules".source = ./.gitmodules;
+  ".editorconfig".source = ./.editorconfig;
+  ".bash_profile".source = ./.bash_profile;
+  ".zshrc".source = ./.zshrc;
+  ".zshenv".source = ./.zshenv;
+  ".zprofile".source = ./.zprofile;
 
   # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
@@ -61,17 +76,18 @@
   #  /etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "nvim";
+  EDITOR = "nvim";
   };
+
+  
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   # Import your tool configs here
   imports = [
-    ./modules/shell/fish.nix
     ./modules/shell/starship.nix
-    ./modules/editor/tmux.nix
+    # ./modules/editor/tmux.nix  # Managed manually
     # Add more as you port them
   ];
 }

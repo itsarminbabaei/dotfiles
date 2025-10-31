@@ -40,5 +40,15 @@
           }
         ];
       };
+
+      # Dev shell for macOS
+      devShells.${macSystem}.default = nixpkgs.legacyPackages.${macSystem}.mkShell {
+        NIX_CONFIG = "extra-experimental-features = nix-command flakes";
+        nativeBuildInputs = with nixpkgs.legacyPackages.${macSystem}; [
+          nix
+          home-manager.packages.${macSystem}.default
+          git
+        ];
+      };
     };
 }

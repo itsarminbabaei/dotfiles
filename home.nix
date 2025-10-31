@@ -66,7 +66,6 @@
     ./fish.nix
     ./starship.nix
     ./tmux.nix
-    # ./nxvim/nxvim.nix  # Nxvim config (uncomment to use Nixvim instead of your nvim)
     # Add more as you port them
   ];
 }

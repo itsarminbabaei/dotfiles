@@ -93,7 +93,7 @@
 
     # Shell aliases (if any)
     shellAliases = {
-      # Add if you have simple aliases
+      nxvim = "XDG_CONFIG_HOME=~/.config_nxvim /Users/itsarminbabaei/.nix-profile/bin/nvim";
     };
   };
 }

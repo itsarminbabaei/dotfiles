@@ -18,10 +18,14 @@
   # environment.
   home.packages = with pkgs; [
     # Add packages here
-    # fish  # Managed manually via home.file
-    starship
-    # tmux  # Managed manually via home.file
+    fish
+    fastfetch
+    ghostty
+    mise
     neovim  # For nvim
+    tmux
+    starship
+    git
     # Add more as needed
   ];
 
@@ -35,13 +39,14 @@
   ".config/ghostty".source = ./config/ghostty;
   ".config/fastfetch".source = ./config/fastfetch;
   ".config/nix".source = ./config/nix;
+  ".config/hypr".source = ./config/hypr;
   ".hyper.js".source = ./.hyper.js;
   ".gitconfig".source = ./.gitconfig;
   ".bashrc".source = ./.bashrc;
   ".profile".source = ./.profile;
   ".gitignore".source = ./.gitignore;
   ".gitmessage".source = ./.gitmessage;
-  ".gitmodules".source = ./.gitmodules;
+    # ".gitmodules".source = ./.gitmodules;
   ".editorconfig".source = ./.editorconfig;
   ".bash_profile".source = ./.bash_profile;
   ".zshrc".source = ./.zshrc;
@@ -79,6 +84,14 @@
   EDITOR = "nvim";
   };
 
+  # Enable tmux
+  programs.tmux = {
+    enable = true;
+    extraConfig = ''
+      set-option -g default-shell $SHELL
+    '';
+  };
+
 
 
   # Let Home Manager install and manage itself.
@@ -87,6 +100,7 @@
   # Import your tool configs here
   imports = [
     ./modules/shell/starship.nix
+    ./modules/desktop/hyprland.nix
     # ./modules/editor/tmux.nix  # Managed manually
     # Add more as you port them
   ];

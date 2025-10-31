@@ -25,10 +25,9 @@ This repository contains personal dotfiles managed with Nix flakes and home-mana
    git clone https://github.com/itsarminbabaei/dotfiles ~/dev/dotfiles
    cd ~/dev/dotfiles
    ```
-3. **Run setup**:
-   ```bash
-   ./init.sh
-   ```
+3. **Apply configuration**:
+- **macOS**: `nix run github:nix-community/home-manager -- switch -b backup --flake .#macos`
+- **NixOS**: `sudo nixos-rebuild switch --flake .#nixos`
 
 This applies configs via home-manager on macOS or nixos-rebuild on NixOS.
 
@@ -38,7 +37,6 @@ This applies configs via home-manager on macOS or nixos-rebuild on NixOS.
 dotfiles/
 ├── flake.nix            # Nix flake definitions
 ├── flake.lock           # Flake lock file
-├── init.sh              # Bootstrap script
 ├── macos/               # macOS-specific configs
 ├── nixos/               # NixOS-specific configs
 ├── shared/              # Common configs and modules
@@ -48,7 +46,9 @@ dotfiles/
 
 ## Development Workflow
 
-Edit files in `~/dev/dotfiles`, then re-run `./init.sh` to apply changes.
+Edit files in `~/dev/dotfiles`, then re-run the appropriate command to apply changes:
+- **macOS**: `nix run github:nix-community/home-manager -- switch -b backup --flake .#macos`
+- **NixOS**: `sudo nixos-rebuild switch --flake .#nixos`
 
 ## Troubleshooting
 

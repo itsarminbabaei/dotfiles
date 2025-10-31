@@ -5,6 +5,6 @@
     enable = true;
 
     # Source your starship.toml
-    settings = builtins.fromTOML (builtins.readFile ./starship/starship.toml);
+    settings = builtins.fromTOML (builtins.readFile ../../../config/starship/starship.toml);
   };
 }

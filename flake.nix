@@ -7,42 +7,36 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }:
     let
       username = "itsarminbabaei";
       macSystem = "aarch64-darwin";
       nixosSystem = "aarch64-linux";
     in {
       # Home config for macOS (standalone)
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.macos = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${macSystem};
         modules = [
-          ./home.nix
-          nixvim.homeManagerModules.nixvim
+          ./shared/home.nix
         ];
         extraSpecialArgs = {
           inherit username;
         };
       };
 
-      # NixOS system config (for VM)
-      nixosConfigurations.nixos-vm = nixpkgs.lib.nixosSystem {
+      # NixOS system config
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = nixosSystem;
         modules = [
-          ./configuration.nix
+          ./nixos/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.${username} = import ./home.nix;
+            home-manager.users.${username} = import ./shared/home.nix;
             home-manager.extraSpecialArgs = { inherit username; };
-            home-manager.sharedModules = [ nixvim.homeManagerModules.nixvim ];
           }
         ];
       };

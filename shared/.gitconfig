@@ -1,0 +1,21 @@
+[user]
+    name = Armin Babaei
+    email = armin@travelese.ai
+
+[core]
+    editor = nvim
+
+[github]
+    user = itsarminbabaei
+    organization = travelese
+
+# Add other Git configs as needed
+[init]
+    defaultBranch = main
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    lg = log --oneline --graph

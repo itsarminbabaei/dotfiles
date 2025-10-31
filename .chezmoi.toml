@@ -1,0 +1,29 @@
+# Chezmoi configuration for dotfiles repo
+# This file configures chezmoi behavior for managing your dotfiles
+
+# Ignore files managed by home-manager to avoid conflicts
+[ignore]
+  patterns = [
+    ".config/fish/**",      # Managed by home-manager fish module
+    ".tmux.conf",           # Managed by home-manager tmux module
+    ".config/starship.toml", # Managed by home-manager starship module
+    ".config/nix/**",       # Nix configs (if any)
+    ".config/nvim/**",      # Managed by nixvim/home-manager
+    "result",               # Nix build artifacts
+    ".git/**",              # Git internals
+  ]
+
+# Template data (available in templates as .chezmoi.*)
+[data]
+  email = "itsarminbabaei@example.com"  # Replace with your actual email
+  name = "Armin Babaei"
+
+# Optional: Set default merge behavior
+[merge]
+  command = "vimdiff"
+
+# Optional: Encryption (if you want to encrypt secrets)
+# [encryption]
+#   command = "gpg"
+#   args = ["--encrypt", "--recipient", "your-key-id"]
+#   suffix = ".asc"

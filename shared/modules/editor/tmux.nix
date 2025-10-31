@@ -12,8 +12,9 @@
       vim-tmux-navigator
     ];
 
-    # Source your .tmux.conf (remove plugin lines since managed above)
+    # Set default shell explicitly
     extraConfig = ''
+      set -g default-shell /opt/homebrew/bin/fish
       #-------------------------------------------------------------------------- 
       # Configuration
       #-------------------------------------------------------------------------- 

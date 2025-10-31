@@ -70,7 +70,7 @@ brew "mise"                 # Polyglot tool version manager
 brew "openssl"              # Cryptography library
 brew "shellcheck"           # Shell script linter
 brew "starship"             # Shell prompt
-brew "tealdeer"             # Simplified man pages
+
 brew "zx"                   # JavaScript shell scripts
 
 # Terminal Multiplexers
@@ -94,7 +94,6 @@ brew "flyctl"               # Fly.io deployment
 brew "awscli"               # AWS CLI
 brew "cloudflare-wrangler"   # Cloudflare Workers CLI
 brew "gh"                   # GitHub CLI
-brew "google-cloud-sdk"     # GCP tools
 brew "supabase"             # Supabase CLI
 
 # Charm Tools
@@ -124,7 +123,7 @@ brew "scc"                  # Code counter
 
 # API & Testing
 brew "scooter"              # API testing tool
-brew "tlrc"                 # HTTP status code lookup
+brew "tlrc"                 # Official tldr client
 
 # Search
 brew "serpl"                # Search tool
@@ -160,10 +159,11 @@ cask "notion"                      # Note taking
 cask "notion-calendar"             # Notion calendar
 cask "raycast"                     # Launcher/hotkey manager
 cask "google-drive"                # Cloud storage
-cask "linear"                      # Issue tracking
+cask "linear-linear"                      # Issue tracking
 cask "amazon-q"                    # AWS AI assistant
 cask "slack"                       # Team communication
 cask "whatsapp"                    # Messaging
+cask "gcloud-cli"     # GCP tools
 
 # Go tools
 go "golang.org/x/tools/gopls"      # Go language server

@@ -48,13 +48,14 @@
      variant = "";
    };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.itsarminbabaei = {
-    isNormalUser = true;
-    description = "Armin Babaei";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
+   # Define a user account. Don't forget to set a password with ‘passwd’.
+   users.users.itsarminbabaei = {
+     isNormalUser = true;
+     description = "Armin Babaei";
+     extraGroups = [ "networkmanager" "wheel" ];
+     packages = with pkgs; [];
+     initialPassword = "changeme";
+   };
 
    # Allow unfree packages
    nixpkgs.config.allowUnfree = true;

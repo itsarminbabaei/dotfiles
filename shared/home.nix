@@ -83,6 +83,11 @@
   EDITOR = "nvim";
   };
 
+  # Symlink tmux.conf to ~ for consistency
+  home.activation.tmuxSymlink = ''
+    ln -sf ~/.config/tmux/tmux.conf ~/.tmux.conf
+  '';
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 

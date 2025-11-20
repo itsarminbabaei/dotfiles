@@ -5,10 +5,9 @@
   services.ssh-agent.enable = pkgs.stdenv.isLinux;
 
   # Nixvim configuration
+  imports = [ inputs.nixvim.homeModules.nixvim ];
   programs.nixvim = {
     enable = true;
-    # Import nixvim config from dedicated module
-    imports = [ inputs.nixvim.homeManagerModules.nixvim ./programs/nixvim/config ];
   };
 
   home.packages =

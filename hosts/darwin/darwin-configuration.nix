@@ -5,7 +5,7 @@
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  users.users.me.home = /Users/me;
+  users.users.itsarminbabaei.home = /Users/itsarminbabaei;
 
   system.stateVersion = 6; # initial nix-darwin state
 }

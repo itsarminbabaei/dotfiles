@@ -1,8 +1,15 @@
-{ pkgs, osConfig, ... }:
+{ pkgs, osConfig, inputs, ... }:
 {
 
   # only available on linux, disabled on macos
   services.ssh-agent.enable = pkgs.stdenv.isLinux;
+
+  # Nixvim configuration
+  programs.nixvim = {
+    enable = true;
+    # Import nixvim config from dedicated module
+    imports = [ inputs.nixvim.homeManagerModules.nixvim ./programs/nixvim/config ];
+  };
 
   home.packages =
     [ pkgs.ripgrep ]

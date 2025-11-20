@@ -5,6 +5,10 @@
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 
+  # Enable fish system-wide
+  programs.fish.enable = true;
+  environment.shells = with pkgs; [ fish ];
+
   users.users.itsarminbabaei.home = /Users/itsarminbabaei;
 
   system.stateVersion = 6; # initial nix-darwin state

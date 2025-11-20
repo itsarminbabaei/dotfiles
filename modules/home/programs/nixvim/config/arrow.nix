@@ -1,0 +1,5 @@
+{
+  plugins.arrow = {
+    enable = true;
+  };
+}

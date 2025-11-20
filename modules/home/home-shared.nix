@@ -8,6 +8,9 @@
   imports = [
     inputs.nixvim.homeModules.nixvim
     ./programs/ghostty.nix
+    ./programs/starship.nix
+    ./programs/fish.nix
+    ./programs/git.nix
   ];
   programs.nixvim = {
     enable = true;

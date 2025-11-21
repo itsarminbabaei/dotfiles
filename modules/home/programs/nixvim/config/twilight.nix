@@ -1,13 +1,13 @@
+# Twilight - Dim inactive code
+# Docs: https://github.com/folke/twilight.nvim
+# Dims surrounding code, focuses attention on current function/block.
+
 {
   plugins.twilight = {
     enable = true;
     settings = {
       dimming = {
         alpha = 0.25;
-        color = {
-          "fg" = "#ffffff";
-          "bg" = "#000000";
-        };
         term_bg = "#000000";
         inactive = false;
       };
@@ -16,13 +16,6 @@
       treesitter_context = true;
       line_numbers = false;
       mode = "cursorline";
-      expand = {
-        "function" = true;
-        "method" = true;
-        "table" = false;
-        "if" = true;
-      };
-      exclude = [ ];
     };
   };
 }

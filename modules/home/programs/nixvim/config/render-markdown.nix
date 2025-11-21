@@ -1,13 +1,16 @@
+# Render-markdown - Markdown rendering
+# Docs: https://github.com/MeanderingProgrammer/markdown.nvim
+# Renders markdown with proper formatting. Displays headers, links, code blocks styled.
+
 {
   plugins.render-markdown = {
     enable = true;
     settings = {
-      enabled = true;
-      max_file_size = 15.0;
-      markdown = {
-        enabled = true;
+      file_types = ["markdown" "Avante"];
+      latex = {
+        enabled = false;
       };
-      html = {
+      yaml = {
         enabled = false;
       };
     };

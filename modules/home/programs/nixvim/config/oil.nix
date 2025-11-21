@@ -1,3 +1,7 @@
+# Oil - File explorer
+# Docs: https://github.com/stevearc/oil.nvim
+# Edit filesystem as if editing text. Elegant file browsing and manipulation.
+
 {
   plugins.oil = {
     enable = true;

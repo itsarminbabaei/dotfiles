@@ -1,10 +1,13 @@
+# Conform - Code formatter
+# Docs: https://github.com/stevearc/conform.nvim
+# Async formatter integrating multiple formatters (Biome, gofmt, stylua, shfmt, etc.).
+
 {
   plugins.conform-nvim = {
     enable = true;
     settings = {
       formatters_by_ft = {
         go = ["goimports" "gofmt"];
-        lua = ["stylua"];
         javascript = ["biome"];
         typescript = ["biome"];
         javascriptreact = ["biome"];
@@ -16,11 +19,9 @@
         html = ["biome"];
         css = ["biome"];
         scss = ["biome"];
-        python = ["isort" "black"];
-        php = ["pint"];
+        lua = ["stylua"];
         sh = ["shfmt"];
         bash = ["shfmt"];
-        rust = ["rustfmt"];
       };
       default_format_opts = {
         lsp_format = "fallback";

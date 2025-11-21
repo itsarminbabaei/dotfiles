@@ -1,3 +1,7 @@
+# Harpoon - File bookmarks
+# Docs: https://github.com/ThePrimeagen/harpoon
+# Quick mark and navigate to frequently accessed files. Lightweight alternative to projects.
+
 {
   plugins.harpoon = {
     enable = true;

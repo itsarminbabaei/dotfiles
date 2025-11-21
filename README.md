@@ -1,68 +1,114 @@
-# Blueprint
+# Blueprint - NixVim Configuration
 
-Nix flake for macOS (darwin) and NixOS configurations with home-manager integration. Shares reusable modules across systems.
+NixVim declarative configuration for Neovim on NixOS/nix.
 
-## Structure
+## Completion
 
-- `hosts/` - System-specific configurations (darwin, nixos)
-- `modules/home/` - Shared home-manager modules
-  - `programs/` - Program configurations (neovim, fish, git, starship, ghostty, etc.)
-  - `home-shared.nix` - Common home-manager settings
-- `flake.nix` - Flake inputs and outputs
-- `cz.json` - Commitizen config
+Core stack: blink-cmp (framework) + lspconfig (6 LSP servers) + supermaven (AI) + luasnip (snippets).
 
-## Features
+All sources merged into single menu: LSP, paths, snippets, buffer, AI.
 
-### Neovim (nixvim)
+Keymaps:
+- `<C-space>` - Open menu
+- `<Tab>` / `<S-Tab>` - Navigate
+- `<CR>` - Accept
+- `<C-a>` - Accept AI suggestion
+- `<C-e>` - Dismiss
 
-Complete neovim setup with:
-- LSP configuration and Mason package manager
-- Completion (blink-cmp)
-- Formatting (conform)
-- Linting (nvim-lint)
-- Git integration (gitsigns, lazygit, diffview)
-- Fuzzy finding (telescope)
-- File navigation (oil, harpoon)
-- Debugging (DAP with go support)
-- AI tools (avante, sidekick)
-- Enhanced UI (noice, which-key, trouble)
-- Status bar (lualine)
-- Tree-sitter integration and context
-- Testing (neotest)
-
-### Shell & Tools
-
-- Fish shell with aliases and Salvage Denim theme
-- Starship prompt with git integration
-- Ghostty terminal with custom keybinds
-- Git with commitizen hooks and LFS
-- CLI utilities: fzf, fd, bat, eza, btop, jq, zoxide, yazi
-- Tmux, zellij for terminal multiplexing
-- LazyGit, LazyDocker for version control and containers
-- AI tools: amp, catnip, claude-code, forge, gemini-cli, goose-cli, qwen-code, droid
-
-### Package Management
-
-- Home-manager for user environment
-- Mason for neovim language servers
-- Nix flakes for reproducible builds
-
-## Installation
-
-```bash
-git clone https://github.com/yourusername/blueprint.git
-cd blueprint
-darwin-rebuild switch --flake .#darwin
-# or for NixOS:
-nixos-rebuild switch --flake .#nixos
+First time setup:
+```
+:SupermavenUseFree
+:LspInfo
 ```
 
-## Usage
+## Project Structure
 
-Edit `hosts/darwin/darwin-configuration.nix` for macOS-specific settings.
-Edit `modules/home/home-shared.nix` for common configurations.
-Add new program configs in `modules/home/programs/`.
+```
+blueprint/
+├── modules/
+│   ├── home/
+│   │   └── programs/
+│   │       └── nixvim/
+│   │           └── config/
+│   │               ├── default.nix          (imports all plugins)
+│   │               ├── blink.nix            (completion + luasnip)
+│   │               ├── lspconfig.nix        (language servers)
+│   │               ├── supermaven.nix       (AI completion)
+│   │               ├── keymaps.nix          (all keybindings)
+│   │               ├── which-key.nix        (keymap help)
+│   │               └── [37 other plugins]
+│   ├── nixos/
+│   └── home-shared.nix
+├── hosts/
+├── flake.nix
+├── flake.lock
+├── cz.json
+└── README.md (this file)
+```
 
-## License
+## Plugins
 
-MIT
+**Completion**: blink-cmp, luasnip, lspconfig, supermaven
+
+**UI**: alpha, bufferline, lualine, noice, which-key, snacks, fidget
+
+**Navigation**: telescope, harpoon, oil, tmux-navigator, flash
+
+**Git**: gitsigns, diffview, fugitive, lazygit, undotree
+
+**Code Quality**: conform, trouble, neotest, dap (+ dap-ui, dap-go, dap-virtual-text)
+
+**Treesitter**: treesitter, treesitter-textobjects, treesitter-context, twilight
+
+**Text Editing**: comment, mini (ai, surround, pairs), spectre, render-markdown
+
+**Other**: editorconfig, sleuth, persistence, arrow, lazydev
+
+## Configuration Philosophy
+
+- Declarative: All config in Nix files
+- Documented: Each file has rationale and source links
+- Minimal: No external setup scripts
+- Composable: Plugins import cleanly
+
+## Removed
+
+- copilot-lua: Replaced by supermaven-nvim (faster, free tier, better integration)
+
+## Tasks
+
+[ ] Review arrow plugin and add proper configuration
+[ ] Expand twilight plugin settings documentation
+[ ] Configure conform formatters for additional languages
+[ ] Document keymaps for all plugins
+[ ] Test supermaven free tier activation workflow
+[ ] Add more language servers if needed (Python, Rust, etc)
+
+## Language Servers
+
+Configured in `modules/home/home-shared.nix` under `programs.nixvim.lsp.servers`.
+
+| Server | Languages | Features |
+|--------|-----------|----------|
+| gopls | Go | Completion, diagnostics, hints |
+| ts_ls | TypeScript/JavaScript | Type checking, imports |
+| lua_ls | Lua | Vim API awareness |
+| bashls | Bash | Linting, completion |
+| jsonls | JSON | Schema validation |
+| nil_ls | Nix | Formatter awareness |
+
+## Documentation
+
+Source links in each config file. Main references:
+
+- lspconfig: https://github.com/neovim/nvim-lspconfig
+- blink-cmp: https://cmp.saghen.dev/
+- supermaven: https://github.com/supermaven-inc/supermaven-nvim
+- nixvim: https://nix-community.github.io/nixvim/
+
+## Next Steps
+
+1. Run `:SupermavenUseFree` to activate AI
+2. Review remaining plugins with comments
+3. Test completion in Go/TS files
+4. Customize keymaps as needed

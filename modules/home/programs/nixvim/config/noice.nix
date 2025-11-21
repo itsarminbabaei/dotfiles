@@ -1,3 +1,7 @@
+# Noice - Message UI
+# Docs: https://github.com/folke/noice.nvim
+# Replaces Vim's default message and command UI with modern popup interface.
+
 {
   plugins.noice = {
     enable = true;

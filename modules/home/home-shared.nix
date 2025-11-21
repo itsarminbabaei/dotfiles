@@ -14,10 +14,22 @@
   ];
   programs.nixvim = {
     enable = true;
+    globals.mapleader = " ";
+    imports = [ ./programs/nixvim/config/default.nix ];
+
+    lsp.servers = {
+      gopls.enable = true;
+      ts_ls.enable = true;
+      lua_ls.enable = true;
+      bashls.enable = true;
+      jsonls.enable = true;
+      nil_ls.enable = true;
+    };
   };
 
   home.packages =
     [ 
+      pkgs.home-manager
       pkgs.ripgrep
       
       # Terminal/shell tools

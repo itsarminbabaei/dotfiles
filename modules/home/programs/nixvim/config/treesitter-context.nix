@@ -1,3 +1,7 @@
+# Treesitter-context - Code context header
+# Docs: https://github.com/nvim-treesitter/nvim-treesitter-context
+# Sticky header showing current function/class context at top of window while scrolling.
+
 {
   plugins.treesitter-context = {
     enable = true;

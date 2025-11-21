@@ -1,3 +1,7 @@
+# DAP - Debug Adapter Protocol
+# Docs: https://github.com/mfussenegger/nvim-dap
+# Debug support with adapters for Go (dap-go), UI, virtual text display of variables.
+
 {
   plugins.dap = {
     enable = true;

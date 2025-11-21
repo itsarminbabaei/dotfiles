@@ -11,13 +11,16 @@
     mouse = true;
     
     plugins = with pkgs.tmuxPlugins; [
-      dracula
+      {
+        plugin = dracula;
+        extraConfig = ''
+          set -g @dracula-plugins "git cpu-usage ram-usage battery weather"
+          set -g @dracula-show-left-icon "#h | #(whoami)"
+          set -g @dracula-show-fahrenheit false
+          set -g @dracula-show-location true
+          set -g @dracula-weather-show-location true
+        '';
+      }
     ];
-
-    extraConfig = ''
-      set -g @dracula-plugins "git cpu-usage ram-usage battery weather"
-      set -g @dracula-show-left-icon "#h | #(whoami)"
-      set -g @dracula-show-fahrenheit false
-    '';
   };
 }

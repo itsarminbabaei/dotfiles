@@ -31,6 +31,10 @@
         error_symbol = "[❯](bold red)";
         vimcmd_symbol = "[❮](bold cyan)";
       };
+
+      os = {
+        disabled = true;
+      };
     };
   };
 }

@@ -41,28 +41,28 @@
     interactiveShellInit = ''
       bind --preset \cC 'cancel-commandline'
 
-      # Salvage Denim Fish Theme
+      # Dracula Fish Theme
       # Colors
-      set -g fish_color_normal DEDDE6
-      set -g fish_color_command 7C8594
-      set -g fish_color_keyword 2E4566
-      set -g fish_color_quote 1D3456
-      set -g fish_color_redirection 152C4C
-      set -g fish_color_end 12253F
-      set -g fish_color_error 091C38
-      set -g fish_color_param C3C3C3
-      set -g fish_color_comment 061930
-      set -g fish_color_selection --background=1D3456
-      set -g fish_color_search_match --background=152C4C
-      set -g fish_color_operator 2E4566
-      set -g fish_color_escape 12253F
-      set -g fish_color_autosuggestion 7C8594
+      set -g fish_color_normal f8f8f2
+      set -g fish_color_command 8be9fd
+      set -g fish_color_keyword ff79c6
+      set -g fish_color_quote f1fa8c
+      set -g fish_color_redirection bd93f9
+      set -g fish_color_end 50fa7b
+      set -g fish_color_error ff5555
+      set -g fish_color_param ffb86c
+      set -g fish_color_comment 6272a4
+      set -g fish_color_selection --background=44475a
+      set -g fish_color_search_match --background=44475a
+      set -g fish_color_operator 50fa7b
+      set -g fish_color_escape 8be9fd
+      set -g fish_color_autosuggestion 6272a4
 
       # Pager colors
-      set -g fish_pager_color_progress DEDDE6 --background=061930
-      set -g fish_pager_color_prefix C3C3C3 --bold --underline
-      set -g fish_pager_color_completion 7C8594
-      set -g fish_pager_color_description 2E4566
+      set -g fish_pager_color_progress f8f8f2 --background=282a36
+      set -g fish_pager_color_prefix 8be9fd --bold --underline
+      set -g fish_pager_color_completion 6272a4
+      set -g fish_pager_color_description bd93f9
     '';
   };
 }

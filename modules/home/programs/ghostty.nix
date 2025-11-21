@@ -4,7 +4,10 @@
     package = null; # Ghostty is installed via DMG on macOS, not managed by Nix
     systemd.enable = false;
     settings = {
-      font-family = ["GeistMono Nerd Font Mono" "Symbols Nerd Font"];
+      font-family = [
+        "GeistMono Nerd Font"
+        "Symbols Nerd Font Mono"
+      ];
       font-size = 14;
       shell-integration-features = "no-cursor,sudo,no-title";
       cursor-style = "block";
@@ -20,15 +23,13 @@
 
       copy-on-select = "clipboard";
 
-      # Salvage Denim Theme
-      background = "061930";
-      foreground = "DEDEE6";
-      selection-background = "152C4C";
-      selection-foreground = "DEDEE6";
-      cursor-color = "7C8594";
-      cursor-text = "cell-background";
-      split-divider-color = "1D3456";
-      unfocused-split-fill = "12253F";
+      # Dracula Theme
+      background = "#282a36";
+      foreground = "#f8f8f2";
+      selection-background = "#44475a";
+      selection-foreground = "#f8f8f2";
+      cursor-color = "#f8f8f2";
+      cursor-text = "#282a36";
 
       background-opacity = 0.95;
       background-blur = true;
@@ -38,22 +39,22 @@
       faint-opacity = 0.7;
 
       palette = [
-        "0=#061930"    # Black: Black Denim
-        "1=#152C4C"    # Red: Midnight Denim
-        "2=#12253F"    # Green: Navy Denim
-        "3=#2E4566"    # Yellow: Vintage Denim
-        "4=#1D3456"    # Blue: Deep Indigo Denim
-        "5=#7C8594"    # Magenta: Stonewashed Denim
-        "6=#091C38"    # Cyan: Dark Wash Denim
-        "7=#C3C3C3"    # White: Silver Denim
-        "8=#152C4C"    # Bright Black: Midnight Denim
-        "9=#1D3456"    # Bright Red: Deep Indigo Denim
-        "10=#2E4566"   # Bright Green: Vintage Denim
-        "11=#7C8594"   # Bright Yellow: Stonewashed Denim
-        "12=#C3C3C3"   # Bright Blue: Silver Denim
-        "13=#DEDEE6"   # Bright Magenta: Light Faded Denim
-        "14=#DEDEE6"   # Bright Cyan: Light Faded Denim
-        "15=#DEDEE6"   # Bright White: Light Faded Denim
+        "0=#21222c"
+        "1=#ff5555"
+        "2=#50fa7b"
+        "3=#f1fa8c"
+        "4=#bd93f9"
+        "5=#ff79c6"
+        "6=#8be9fd"
+        "7=#f8f8f2"
+        "8=#6272a4"
+        "9=#ff6e6e"
+        "10=#69ff94"
+        "11=#ffffa5"
+        "12=#d6acff"
+        "13=#ff92df"
+        "14=#a4ffff"
+        "15=#ffffff"
       ];
 
       # keybindings

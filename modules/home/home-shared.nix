@@ -11,6 +11,8 @@
     ./programs/starship.nix
     ./programs/fish.nix
     ./programs/git.nix
+    ./programs/tmux.nix
+    ./programs/zellij.nix
   ];
   programs.nixvim = {
     enable = true;
@@ -38,6 +40,7 @@
       pkgs.starship
       pkgs.lazygit
       pkgs.lazydocker
+      pkgs.gh
       
       # CLI utilities
       pkgs.fzf
@@ -49,6 +52,11 @@
       pkgs.zoxide
       pkgs.yazi
       
+      # Fonts
+      pkgs.nerd-fonts.geist-mono
+      pkgs.jetbrains-mono
+      pkgs.nerd-fonts.symbols-only
+
       # AI tools (from nix-ai-tools flake)
       inputs.nix-ai-tools.packages.${pkgs.stdenv.system}.amp
       inputs.nix-ai-tools.packages.${pkgs.stdenv.system}.catnip

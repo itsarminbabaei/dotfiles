@@ -4,35 +4,34 @@
     enableFishIntegration = true;
 
     settings = {
-      palette = "salvage_denim";
+      palette = "dracula";
 
-      palettes.salvage_denim = {
-        light_faded = "#DEDEE6";
-        silver = "#C3C3C3";
-        stonewashed = "#7C8594";
-        vintage = "#2E4566";
-        deep_indigo = "#1D3456";
-        midnight = "#152C4C";
-        navy = "#12253F";
-        dark_wash = "#091C38";
-        black_denim = "#061930";
+      palettes.dracula = {
+        background = "#282a36";
+        current_line = "#44475a";
+        foreground = "#f8f8f2";
+        comment = "#6272a4";
+        red = "#ff5555";
+        orange = "#ffb86c";
+        yellow = "#f1fa8c";
+        green = "#50fa7b";
+        cyan = "#8be9fd";
+        blue = "#bd93f9";
+        purple = "#ff79c6";
       };
 
-      format = ''
-        [╭────](bold light_faded) $os$directory$git_branch$git_status$aws$buf$bun$c$cpp$cmake$conda$crystal$dart$deno$docker_context$elixir$elm$fennel$fortran$fossil_branch$gcloud$golang$gradle$guix_shell$haskell$haxe$hg_branch$java$julia$kotlin$lua$memory_usage$meson$nim$nix_shell$nodejs$ocaml$package$perl$php$pijul_channel$pixi$python$rlang$ruby$rust$scala$swift$xmake$zig$os$cmd_duration$jobs$battery
-        [╰─](bold light_faded) $character
-      '';
+      format = "$os$directory$git_branch$git_status$aws$buf$bun$c$cpp$cmake$conda$crystal$dart$deno$docker_context$elixir$elm$fennel$fortran$fossil_branch$gcloud$golang$gradle$guix_shell$haskell$haxe$hg_branch$java$julia$kotlin$lua$memory_usage$meson$nim$nix_shell$nodejs$ocaml$package$perl$php$pijul_channel$pixi$python$rlang$ruby$rust$scala$swift$xmake$zig$cmd_duration$jobs$battery $character ";
 
       add_newline = false;
 
       character = {
-        success_symbol = "[❯](bold light_faded)";
-        error_symbol = "[❯](bold stonewashed)";
-        vimcmd_symbol = "[❮](bold light_faded)";
+        success_symbol = "[❯](bold green)";
+        error_symbol = "[❯](bold red)";
+        vimcmd_symbol = "[❮](bold cyan)";
       };
 
       directory = {
-        style = "fg:light_faded bg:black_denim";
+        style = "fg:foreground bg:background";
         format = "[ $path ]($style)";
         truncation_length = 3;
         truncation_symbol = "…/";
@@ -49,11 +48,11 @@
 
       git_branch = {
         symbol = "";
-        style = "fg:vintage bg:black_denim";
+        style = "fg:purple bg:background";
       };
 
       git_status = {
-        style = "fg:deep_indigo bg:black_denim";
+        style = "fg:red bg:background";
         ahead = "⇡$\{count\}";
         behind = "⇣$\{count\}";
         diverged = "⇕⇡$\{ahead_count\}⇣$\{behind_count\}";
@@ -66,7 +65,7 @@
       time = {
         disabled = false;
         format = "[ $time ]($style)";
-        style = "fg:light_faded bg:black_denim";
+        style = "fg:foreground bg:background";
         time_format = "%R";
       };
 
@@ -95,7 +94,7 @@
       hg_branch.symbol = " ";
       hostname = {
         ssh_only = false;
-        style = "fg:silver bg:black_denim";
+        style = "fg:foreground bg:background";
         format = "[$hostname ]($style)";
         ssh_symbol = " ";
       };
@@ -105,7 +104,7 @@
       lua.symbol = " ";
       memory_usage = {
         symbol = "";
-        style = "fg:navy bg:black_denim";
+        style = "fg:blue bg:background";
       };
       meson.symbol = "󰔷 ";
       nim.symbol = "󰆥 ";
@@ -114,7 +113,7 @@
       ocaml.symbol = " ";
       package = {
         symbol = "󰏗 ";
-        style = "fg:dark_wash bg:black_denim";
+        style = "fg:yellow bg:background";
       };
       perl.symbol = " ";
       php.symbol = " ";
@@ -131,7 +130,7 @@
 
       os = {
         format = "[$symbol$os]($style)";
-        style = "fg:light_faded bg:black_denim";
+        style = "fg:foreground bg:background";
         symbols = {
           AIX = " ";
           AlmaLinux = " ";
@@ -192,25 +191,25 @@
       status = {
         disabled = false;
         symbol = "✖";
-        style = "fg:stonewashed bg:black_denim";
+        style = "fg:red bg:background";
         format = "[$symbol$status]($style) ";
       };
 
       cmd_duration = {
         format = "[$duration]($style) ";
-        style = "fg:stonewashed bg:black_denim";
+        style = "fg:orange bg:background";
       };
 
       jobs = {
         symbol = "";
-        style = "fg:midnight bg:black_denim";
+        style = "fg:yellow bg:background";
         format = "[$symbol$number]($style) ";
       };
 
       username = {
         show_always = true;
-        style_user = "fg:silver bg:black_denim";
-        style_root = "fg:vintage bg:black_denim";
+        style_user = "fg:foreground bg:background";
+        style_root = "fg:red bg:background";
         format = "[$user ]($style)";
       };
 

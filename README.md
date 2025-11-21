@@ -71,19 +71,6 @@ blueprint/
 - Minimal: No external setup scripts
 - Composable: Plugins import cleanly
 
-## Removed
-
-- copilot-lua: Replaced by supermaven-nvim (faster, free tier, better integration)
-
-## Tasks
-
-[ ] Review arrow plugin and add proper configuration
-[ ] Expand twilight plugin settings documentation
-[ ] Configure conform formatters for additional languages
-[ ] Document keymaps for all plugins
-[ ] Test supermaven free tier activation workflow
-[ ] Add more language servers if needed (Python, Rust, etc)
-
 ## Language Servers
 
 Configured in `modules/home/home-shared.nix` under `programs.nixvim.lsp.servers`.

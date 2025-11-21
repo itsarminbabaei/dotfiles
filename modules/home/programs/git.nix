@@ -24,6 +24,8 @@
 
       core.editor = "nvim";
 
+      credential.helper = "osxkeychain";
+
       filter.lfs = {
         clean = "git-lfs clean -- %f";
         smudge = "git-lfs smudge -- %f";

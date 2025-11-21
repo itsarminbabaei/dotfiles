@@ -4,6 +4,9 @@
   # only available on linux, disabled on macos
   services.ssh-agent.enable = pkgs.stdenv.isLinux;
 
+  # Enable fontconfig for Nerd Fonts
+  fonts.fontconfig.enable = true;
+
   # Nixvim configuration
   imports = [
     inputs.nixvim.homeModules.nixvim
@@ -42,6 +45,11 @@
       pkgs.lazydocker
       pkgs.gh
       
+      # Development tools
+      pkgs.rustup
+      pkgs.bun
+      pkgs.pnpm
+      
       # CLI utilities
       pkgs.fzf
       pkgs.fd
@@ -49,12 +57,26 @@
       pkgs.eza
       pkgs.btop
       pkgs.jq
+      pkgs.jnv
       pkgs.zoxide
       pkgs.yazi
+      pkgs.trash-cli
+      pkgs.curl
+      pkgs.wget
+      pkgs.httpie
+      pkgs.httpstat
+      pkgs.npkill
+      
+      # Cloud & Infrastructure
+      pkgs.awscli2
+      pkgs.amazon-q-cli
+      pkgs.google-cloud-sdk
+      pkgs.openssh
+      pkgs.sshpass
+      pkgs.autossh
       
       # Fonts
       pkgs.nerd-fonts.geist-mono
-      pkgs.jetbrains-mono
       pkgs.nerd-fonts.symbols-only
 
       # AI tools (from nix-ai-tools flake)

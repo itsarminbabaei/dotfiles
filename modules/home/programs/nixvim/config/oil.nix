@@ -6,7 +6,7 @@
   plugins.oil = {
     enable = true;
     settings = {
-      default_file_explorer = true;
+      default_file_explorer = false;
       columns = [
         "icon"
       ];
@@ -19,6 +19,15 @@
       };
       constrain_cursor_to_editable = true;
       watch_for_changes = true;
+      keymaps = {
+        # Opens file in vertical split
+        "<CR>" = {
+          __unkeyed-1 = "actions.select";
+          opts = {
+            vertical = true;
+          };
+        };
+      };
     };
   };
 }

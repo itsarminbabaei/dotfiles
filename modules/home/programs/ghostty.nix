@@ -5,7 +5,7 @@
     systemd.enable = false;
     settings = {
       font-family = [
-        "GeistMono Nerd Font"
+        "GeistMono Nerd Font Mono"
         "Symbols Nerd Font Mono"
       ];
       font-size = 14;

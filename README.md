@@ -294,7 +294,7 @@ From `home-shared.nix`:
 
 **CLI Utilities**: ripgrep, fzf, fd, bat, eza, btop, jq, zoxide, yazi
 
-**Fonts**: Geist Mono, JetBrains Mono, Nerd Fonts symbols-only
+**Fonts**: Geist Mono, Nerd Fonts symbols-only
 
 **AI Tools** (from nix-ai-tools): amp, catnip, claude-code, droid, forge, gemini-cli, goose-cli, qwen-code
 

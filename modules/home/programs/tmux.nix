@@ -13,5 +13,11 @@
     plugins = with pkgs.tmuxPlugins; [
       dracula
     ];
+
+    extraConfig = ''
+      set -g @dracula-plugins "git cpu-usage ram-usage battery weather"
+      set -g @dracula-show-left-icon "#h | #(whoami)"
+      set -g @dracula-show-fahrenheit false
+    '';
   };
 }

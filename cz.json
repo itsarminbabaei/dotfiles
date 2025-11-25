@@ -1,7 +1,7 @@
 {
   "commitizen": {
     "name": "cz_conventional_commits",
-    "tag_format": "$version",
+    "tag_format": "$semver2",
     "version_scheme": "semver2",
     "version": "0.1.0",
     "update_changelog_on_bump": true,

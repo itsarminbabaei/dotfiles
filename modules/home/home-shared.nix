@@ -81,13 +81,10 @@
 
       # AI tools (from nix-ai-tools flake)
       inputs.nix-ai-tools.packages.${pkgs.stdenv.system}.amp
-      inputs.nix-ai-tools.packages.${pkgs.stdenv.system}.catnip
       inputs.nix-ai-tools.packages.${pkgs.stdenv.system}.claude-code
       inputs.nix-ai-tools.packages.${pkgs.stdenv.system}.droid
-      inputs.nix-ai-tools.packages.${pkgs.stdenv.system}.forge
       inputs.nix-ai-tools.packages.${pkgs.stdenv.system}.gemini-cli
       inputs.nix-ai-tools.packages.${pkgs.stdenv.system}.goose-cli
-      inputs.nix-ai-tools.packages.${pkgs.stdenv.system}.qwen-code
     ]
     ++ (
       # you can access the host configuration using osConfig.

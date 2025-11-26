@@ -5,6 +5,7 @@
 {
   plugins.lualine = {
     enable = true;
+    package = null; # Override broken nixpkgs hash, will use system lualine.nvim
     settings = {
       options = {
         icons_enabled = true;

@@ -14,7 +14,7 @@
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixvim.url = "github:nix-community/nixvim";
+    nixvim.url = "github:nix-community/nixvim/nixvim-25.11";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-ai-tools.url = "github:numtide/nix-ai-tools";

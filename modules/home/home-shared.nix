@@ -1,5 +1,7 @@
 { pkgs, osConfig, inputs, ... }:
 {
+  # Disable version mismatch warning for unstable branches
+  home.enableNixpkgsReleaseCheck = false;
 
   # only available on linux, disabled on macos
   services.ssh-agent.enable = pkgs.stdenv.isLinux;

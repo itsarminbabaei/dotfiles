@@ -21,10 +21,6 @@
   ];
   programs.nixvim = {
     enable = true;
-    # Use the global nixpkgs instance instead of nixvim's own
-    # Required because nixvim now constructs its own nixpkgs by default
-    # See: https://nix-community.github.io/nixvim/
-    nixpkgs.useGlobalPackages = true;
     globals.mapleader = " ";
     imports = [ ./programs/nixvim/config/default.nix ];
 

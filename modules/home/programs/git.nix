@@ -4,21 +4,24 @@
 }: {
   programs.git = {
     enable = true;
-    userName = "Armin Babaei";
-    userEmail = "armin.babaei@me.com";
 
-    aliases = {
-      co = "checkout";
-      br = "branch";
-      ci = "commit";
-      st = "status";
-      unstage = "reset HEAD --";
-      last = "log -1 HEAD";
-      visual = "!gitk";
-      graph = "log --oneline --graph --all -20";
-    };
+    settings = {
+      user = {
+        name = "Armin Babaei";
+        email = "armin.babaei@me.com";
+      };
 
-    extraConfig = {
+      alias = {
+        co = "checkout";
+        br = "branch";
+        ci = "commit";
+        st = "status";
+        unstage = "reset HEAD --";
+        last = "log -1 HEAD";
+        visual = "!gitk";
+        graph = "log --oneline --graph --all -20";
+      };
+
       core.editor = "nvim";
       credential.helper = "osxkeychain";
       filter.lfs = {

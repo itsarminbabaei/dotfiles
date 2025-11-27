@@ -1,7 +1,3 @@
-# Lualine - Statusline
-# Docs: https://github.com/nvim-lualine/lualine.nvim
-# Customizable statusline at bottom showing mode, branch, diagnostics, location, etc.
-
 {
   plugins.lualine = {
     enable = true;

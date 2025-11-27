@@ -725,28 +725,7 @@
       options = { noremap = true; silent = true; };
     }
 
-    # Spectre
-    {
-      mode = "n";
-      key = "<leader>Rr";
-      action = "<Cmd>lua require('spectre').open()<CR>";
-      options = { desc = "Replace"; };
-    }
-    {
-      mode = "n";
-      key = "<leader>Rw";
-      action = "<Cmd>lua require('spectre').open_visual({ select_word = true })<CR>";
-      options = { desc = "Replace Word"; };
-    }
-    {
-      mode = "n";
-      key = "<leader>Rf";
-      action = "<Cmd>lua require('spectre').open_file_search()<CR>";
-      options = { desc = "Replace Buffer"; };
-    }
-
-    # Supermaven (AI Completion)
-    # Note: Keymaps handled by supermaven.nix settings, not here
+      # Note: Keymaps handled by supermaven.nix settings, not here
     # These are for reference/documentation
     # <C-a> - Accept suggestion (configured in supermaven.nix)
     # <C-e> - Dismiss suggestion (configured in supermaven.nix)

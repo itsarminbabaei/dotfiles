@@ -263,10 +263,7 @@
           __unkeyed-1 = "<leader>xL";
           desc = "Location List";
         }
-        {
-          __unkeyed-1 = "<leader>xQ";
-          desc = "Quickfix List";
-        }
+
 
         # Code Viewing
         {

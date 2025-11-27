@@ -17,7 +17,7 @@
     ./telescope.nix
     ./harpoon.nix
     ./oil.nix
-    ./lualine.nix
+    # ./lualine.nix # Broken hash in unstable nixpkgs
     ./dap.nix
     ./render-markdown.nix
     ./neotest.nix
@@ -29,7 +29,6 @@
     ./persistence.nix
     ./tmux-navigator.nix
     ./comment.nix
-    ./spectre.nix
     ./sleuth.nix
     ./fidget.nix
     ./lazydev.nix

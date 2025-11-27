@@ -44,6 +44,48 @@
           group = "Goto";
           icon = " ";
         }
+        {
+          __unkeyed-1 = "gc";
+          group = "Comment";
+          icon = " ";
+        }
+        {
+          __unkeyed-1 = "gcc";
+          desc = "Toggle line comment";
+        }
+        {
+          __unkeyed-1 = "gbc";
+          desc = "Toggle block comment";
+        }
+        {
+          __unkeyed-1 = "s";
+          group = "Surround/Flash";
+          icon = " ";
+        }
+        {
+          __unkeyed-1 = "sa";
+          desc = "Add surrounding";
+        }
+        {
+          __unkeyed-1 = "sd";
+          desc = "Delete surrounding";
+        }
+        {
+          __unkeyed-1 = "sr";
+          desc = "Replace surrounding";
+        }
+        {
+          __unkeyed-1 = "sh";
+          desc = "Highlight surrounding";
+        }
+        {
+          __unkeyed-1 = "sf";
+          desc = "Find right surrounding";
+        }
+        {
+          __unkeyed-1 = "sF";
+          desc = "Find left surrounding";
+        }
 
         # Leader Groups
         {

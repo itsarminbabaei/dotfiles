@@ -6,8 +6,23 @@
   plugins.mini = {
     enable = true;
     modules = {
-      ai = {};
-      surround = {};
+      ai = {
+        mappings = {
+          around = null;
+          inside = null;
+        };
+      };
+      surround = {
+        mappings = {
+          add = null;
+          delete = null;
+          find = null;
+          find_left = null;
+          highlight = null;
+          replace = null;
+          update_n_lines = null;
+        };
+      };
       pairs = {};
     };
   };

@@ -667,6 +667,70 @@
       options = { desc = "Toggle Flash Search"; };
     }
 
+    # Mini Surround
+    {
+      mode = ["n" "x"];
+      key = "sa";
+      action = "<Cmd>lua require('mini.surround').add('visual')<CR>";
+      options = { desc = "Add surrounding"; };
+    }
+    {
+      mode = "n";
+      key = "sd";
+      action = "<Cmd>lua require('mini.surround').delete()<CR>";
+      options = { desc = "Delete surrounding"; };
+    }
+    {
+      mode = "n";
+      key = "sr";
+      action = "<Cmd>lua require('mini.surround').replace()<CR>";
+      options = { desc = "Replace surrounding"; };
+    }
+    {
+      mode = "n";
+      key = "sh";
+      action = "<Cmd>lua require('mini.surround').highlight()<CR>";
+      options = { desc = "Highlight surrounding"; };
+    }
+    {
+      mode = "n";
+      key = "sf";
+      action = "<Cmd>lua require('mini.surround').find('right')<CR>";
+      options = { desc = "Find right surrounding"; };
+    }
+    {
+      mode = "n";
+      key = "sF";
+      action = "<Cmd>lua require('mini.surround').find('left')<CR>";
+      options = { desc = "Find left surrounding"; };
+    }
+
+    # Comment Toggle
+    {
+      mode = "n";
+      key = "gcc";
+      action = "<Cmd>lua require('Comment.api').toggle.linewise()<CR>";
+      options = { desc = "Toggle line comment"; };
+    }
+    {
+      mode = "n";
+      key = "gbc";
+      action = "<Cmd>lua require('Comment.api').toggle.blockwise()<CR>";
+      options = { desc = "Toggle block comment"; };
+    }
+    {
+      mode = "x";
+      key = "gc";
+      action = "<Cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>";
+      options = { desc = "Toggle line comment"; };
+    }
+    {
+      mode = "x";
+      key = "gb";
+      action = "<Cmd>lua require('Comment.api').toggle.blockwise(vim.fn.visualmode())<CR>";
+      options = { desc = "Toggle block comment"; };
+    }
+
     # Persistence
     {
       mode = "n";

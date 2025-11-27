@@ -5,6 +5,15 @@
 {
   plugins.comment = {
     enable = true;
-    settings = {};
+    settings = {
+      toggler = {
+        line = null;
+        block = null;
+      };
+      opleader = {
+        line = null;
+        block = null;
+      };
+    };
   };
 }

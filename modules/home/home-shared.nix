@@ -51,6 +51,20 @@
       pkgs.rustup
       pkgs.bun
       pkgs.pnpm
+      pkgs.nodePackages.mermaid-cli
+      
+      # Formatters & Tools
+      pkgs.biome
+      pkgs.stylua
+      pkgs.shfmt
+      pkgs.go
+      pkgs.nodePackages.typescript-language-server
+      pkgs.gotools
+      
+      # Image & document tools
+      pkgs.imagemagick
+      pkgs.ghostscript
+      pkgs.texlive.combined.scheme-basic
       
       # CLI utilities
       pkgs.fzf

@@ -13,11 +13,13 @@
     ./lspconfig.nix
     ./which-key.nix
     ./git.nix
+    ./icons.nix
     ./noice.nix
+    ./airline.nix
     ./telescope.nix
     ./harpoon.nix
     ./oil.nix
-    # ./lualine.nix # Broken hash in unstable nixpkgs
+    ./oil-git-status.nix
     ./dap.nix
     ./render-markdown.nix
     ./neotest.nix

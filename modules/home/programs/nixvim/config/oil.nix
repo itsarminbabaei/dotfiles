@@ -3,6 +3,10 @@
 # Edit filesystem as if editing text. Elegant file browsing and manipulation.
 
 {
+  # Oil - File explorer
+  # Docs: https://github.com/stevearc/oil.nvim
+  # Edit filesystem as if editing text. Elegant file browsing and manipulation.
+
   plugins.oil = {
     enable = true;
     settings = {
@@ -19,6 +23,18 @@
       };
       constrain_cursor_to_editable = true;
       watch_for_changes = true;
+      win_options = {
+        statusline = "";
+        showtabline = 0;
+        wrap = false;
+        signcolumn = "yes:2";
+        cursorcolumn = false;
+        foldcolumn = "0";
+        spell = false;
+        list = false;
+        conceallevel = 3;
+        concealcursor = "nvic";
+      };
       keymaps = {
         # Opens file in vertical split
         "<CR>" = {

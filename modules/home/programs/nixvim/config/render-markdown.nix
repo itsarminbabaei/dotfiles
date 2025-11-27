@@ -7,6 +7,9 @@
     enable = true;
     settings = {
       file_types = ["markdown" "Avante"];
+      html = {
+        enabled = false;
+      };
       latex = {
         enabled = false;
       };

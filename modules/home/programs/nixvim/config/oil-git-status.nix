@@ -1,7 +1,12 @@
-{
-  # oil-git-status - Git status column for Oil
-  # Docs: https://github.com/refractalize/oil-git-status.nvim
-  # Rationale: Adds git icons (A/D/M/U/?/C) column to Oil explorer
+# oil-git-status - Git status for Oil
+# Docs: https://github.com/refractalize/oil-git-status.nvim
+# Adds git status icons in sign columns
 
-  plugins.oil-git-status.enable = true;
+{
+  plugins.oil-git-status = {
+    enable = true;
+    settings = {
+      show_ignored = false;
+    };
+  };
 }

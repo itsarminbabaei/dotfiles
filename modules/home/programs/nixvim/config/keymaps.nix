@@ -186,6 +186,12 @@
       action = "<Cmd>Oil<CR>";
       options = { desc = "Open parent directory"; };
     }
+    {
+      mode = "n";
+      key = "<CR>";
+      action = "<Cmd>lua require('oil.actions').select({ vertical = true })<CR>";
+      options = { desc = "Open in vertical split"; noremap = true; silent = true; };
+    }
 
     # Snacks Explorer
     {
